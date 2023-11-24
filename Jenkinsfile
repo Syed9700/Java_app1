@@ -101,7 +101,7 @@ pipeline{
                }
             }
         }
-        chmod +x jfpush.sh
+        
         
          stage('Docker Image Scan: trivy '){
          when { expression {  params.action == 'create' } }
