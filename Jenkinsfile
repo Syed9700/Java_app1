@@ -91,7 +91,8 @@ pipeline{
                }
             }
         }
-
+        cd target 
+        curl -X PUT -u 'admin:password' -T kubernetes-configmap-reload-0.0.1-SNAPSHOT.jar http://jfroghost:8082/artifactory/example-repo-local/
         stage('Docker Image Build'){
          when { expression {  params.action == 'create' } }
             steps{
@@ -101,6 +102,8 @@ pipeline{
                }
             }
         }
+        chmod +x jfpush.sh
+        
          stage('Docker Image Scan: trivy '){
          when { expression {  params.action == 'create' } }
             steps{
