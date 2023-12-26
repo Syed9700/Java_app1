@@ -1,14 +1,13 @@
-@Library('shared-library') _
+
 
 pipeline{
   agent any
   
   stages{
-    stage('git checkout'){
+    stage('Checkout'){
       steps{
-        gitCheckout(
-          branch: "main",
-          url: "https://github.com/Syed9700/Java_app1"
+        (
+          checkout scm
         )
         
       
@@ -19,8 +18,8 @@ pipeline{
       stage(' maven build')
       {
         steps(){
-          when{ expression { params.action == create } }
-            mvnBuild()
+          withMaven(maven: 'Maven3') {
+            sh 'mvn clean install'
 
         }
       }
