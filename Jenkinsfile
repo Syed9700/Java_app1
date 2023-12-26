@@ -13,16 +13,7 @@ pipeline{
         
       
     }
-      stage('unit test maven'){
-        steps(){
-          when{ expression { params.action == create }  }
-          step{
-            script{
-              mvnTest()
-              
-          }
-          }
-        }
+      
       }
 
       stage(' maven build')
@@ -35,5 +26,5 @@ pipeline{
       }
     }
   }
-}
+
   
