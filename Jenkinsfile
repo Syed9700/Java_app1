@@ -4,7 +4,7 @@ pipeline{
   stages{
     stage('Checkout'){
       steps{
-        checkout 'GitSCM'
+        checkout: 'GitSCM'
   }
         
       
