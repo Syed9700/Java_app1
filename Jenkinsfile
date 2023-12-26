@@ -4,13 +4,7 @@ pipeline{
   stages{
     stage('Checkout'){
       steps{
-        
- 
-    checkout([
-        $class: 'GitSCM',
-        branches: [[name:  stageParams.branch ]],
-        userRemoteConfigs: [[ url: stageParams.url ]]
-    ])
+        checkout 'GitSCM'
   }
         
       
