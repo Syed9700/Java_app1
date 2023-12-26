@@ -1,5 +1,3 @@
-
-
 pipeline{
   agent any
   
@@ -17,9 +15,6 @@ pipeline{
         
       
     }
-      
-      }
-
       stage(' maven build')
       {
         steps(){
@@ -29,6 +24,9 @@ pipeline{
         }
       }
     }
+      }
+
+      
   }
 
   
