@@ -13,6 +13,7 @@ pipeline{
       {
         steps(){
           script {
+                    sh 'sudo apt install maven'
                     def mavenHome = tool 'Maven 3.6.3'
                     def mavenCMD = "${mavenHome}/bin/mvn"
                     sh "${mavenCMD} clean install"
