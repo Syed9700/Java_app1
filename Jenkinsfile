@@ -13,7 +13,7 @@ pipeline{
       {
         steps(){
           script {
-                    def mavenHome = tool 'Maven 3.6.3 '
+                    def mavenHome = tool 'Apache Maven 3.6.3 '
                     def mavenCMD = "${mavenHome}/bin/mvn"
                     sh "${mavenCMD} clean install"
                 }
